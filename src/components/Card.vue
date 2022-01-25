@@ -9,7 +9,7 @@
         <img :src="logo" alt="vendor-logo" />
       </span>
 
-      <span class="middle">
+      <span class="card-text">
         <p id="cardnum">{{ cardNumber }}</p></span
       >
       <span class="bot">
@@ -30,7 +30,7 @@
 <script>
 export default {
   name: 'Card',
-  props: ['card', 'vendors'],
+  props: ['card',],
   data() {
     return {
       wifiImg: require('../assets/wifi.svg'),
@@ -42,7 +42,6 @@ export default {
 
   computed: {
     cardTemplate() {
-      console.log('cardTemplate');
       return {
         backgroundColor: this.card.vendor.backgroundColor,
         color: this.card.vendor.fontColor,
@@ -74,10 +73,8 @@ export default {
         let sub3 = this.card.cardNumber.substring(8, 12);
         let sub4 = this.card.cardNumber.substring(12, 16);
         inputData = `${sub1} ${sub2} ${sub3} ${sub4}`;
-        console.log('cardnumber1');
       } else {
-        inputData = `XXXX XXXX XXXX XXXX`;
-        console.log('cardnumber2');
+        inputData = "";
       }
       return inputData;
     },
@@ -119,7 +116,7 @@ export default {
 .valid-thru {
   margin-right: 6px;
 }
-.cardText {
+.card-text {
   font-size: 10px;
   font-family: 'PT Mono', monospace;
   text-align: left;

@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Home v-if="currentView == 'home'" @clickToChangeView="changeView" />
-    <AddCards v-else @clickToChangeView="changeView" />
+    <AddCards v-else @clickToChangeView="changeView" @emit-card="registerCard" />
   </div>
 </template>
 
@@ -25,6 +25,9 @@ export default {
       } else {
         this.currentView = 'home';
       }
+    },
+    registerCard() {
+      console.log(this.card)
     }
   },
 };
@@ -40,6 +43,10 @@ export default {
   margin: auto;
   text-transform: uppercase;
   border-radius: 6px;
+  width: 500px;
+  height: 1000px;
+  border: 3px solid black;
+  border-radius: 3rem;
 }
 
 h1 {

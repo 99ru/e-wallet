@@ -1,10 +1,9 @@
 <template>
   <div id="home-view">
     <h1>E-WALLET</h1>
-    <h4>ACTIVE CARD</h4>
+    <p>ACTIVE CARD</p>
+    
     <div class="card-list">
-
-       <!-- saved cards  -->
       <CardStack/>
     </div>
     <button @click="$emit('clickToChangeView')" class="add-button">ADD A NEW CARD</button>
@@ -16,8 +15,10 @@ import CardStack from "../components/CardStack.vue";
 export default {
   name: 'Home',
   components: { CardStack },
+
   data() {
     return {
+
     };
   },
 };
