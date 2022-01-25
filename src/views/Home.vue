@@ -4,7 +4,7 @@
     <p>ACTIVE CARD</p>
     
     <div class="card-list">
-      <CardStack/>
+      <CardStack :cards="cards"/>
     </div>
     <button @click="$emit('clickToChangeView')" class="add-button">ADD A NEW CARD</button>
   </div>
@@ -15,6 +15,11 @@ import CardStack from "../components/CardStack.vue";
 export default {
   name: 'Home',
   components: { CardStack },
+  props: {
+    cards: {
+      type: Array,
+    },
+  },
 
   data() {
     return {

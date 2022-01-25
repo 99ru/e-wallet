@@ -10,8 +10,7 @@
       </span>
 
       <span class="card-text">
-        <p id="cardnum">{{ cardNumber }}</p></span
-      >
+        <p id="cardnum">{{ cardNumber }}</p></span>
       <span class="bot">
         <div class="name">
           <p class="cardText">CARDHOLDER NAME</p>
@@ -22,6 +21,7 @@
           <p class="cardText">VALID THRU</p>
           <p class="cardinfo">{{ `${validMonth}/${validYear}` }}</p>
         </div>
+
       </span>
     </div>
   </div>

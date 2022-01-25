@@ -1,41 +1,68 @@
 <template>
   <div id="app">
-    <Home v-if="currentView == 'home'" @clickToChangeView="changeView" />
-    <AddCards v-else @clickToChangeView="changeView" @emit-card="registerCard" />
+    <Home v-if="currentView == 'home'" @clickToChangeView="changeView" :cards="cards"/>
+    <AddCards
+      v-else
+      @clickToChangeView="changeView"
+      @emit-card="registerCard"
+    />
   </div>
 </template>
 
 <script>
-import Home from './views/Home.vue';
-import AddCards from './views/AddCards.vue';
+import Home from "./views/Home.vue";
+import AddCards from "./views/AddCards.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: { Home, AddCards },
   data() {
     return {
-      currentView: 'home',
+      currentView: "home",
+      cards: [
+        {
+          id: 0,
+          cardNumber: "1234 5678 9012 3456",
+          name: "Lars Filipsson",
+          year: "2022",
+          month: "12",
+          vendor: {
+            name: "Bitcoin Inc",
+            backgroundColor: "#FFAE34",
+            fontColor: "black",
+            logo: require("./assets/bitcoin.svg"),
+          },
+        },
+      ],
     };
   },
-  
+
   methods: {
     changeView() {
-      if (this.currentView == "home" ) {
-        this.currentView = 'addCards';
+      if (this.currentView == "home") {
+        this.currentView = "addCards";
       } else {
-        this.currentView = 'home';
+        this.currentView = "home";
       }
     },
-    registerCard() {
-      console.log(this.card)
-    }
+    registerCard(value) {
+      this.cards.push({
+        id: this.cards.length,
+        cardNumber: value.cardNumber,
+        name: value.name,
+        year: value.year,
+        month: value.month,
+        vendor: value.vendor,
+      });
+      console.log(this.cards);
+    },
   },
 };
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=PT+Mono&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=PT+Mono&display=swap");
 
 #app {
   display: flex;
@@ -50,15 +77,15 @@ export default {
 }
 
 h1 {
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
 }
 
 input {
-  font-family: 'PT Mono', monospace;
+  font-family: "PT Mono", monospace;
 }
 
 button {
-  font-family: 'PT Mono', monospace;
+  font-family: "PT Mono", monospace;
   font-size: 22px;
   width: 382px;
   height: 72px;
