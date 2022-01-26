@@ -1,7 +1,10 @@
 <template>
   <div class="add-cards">
-    <h1>ADD A NEW BANK CARD</h1>
-    <p>NEW CARD</p>
+    <header >
+      <h1>ADD A NEW BANK CARD</h1>
+      <p>NEW CARD</p>
+    </header>
+
     <div id="form">
       <!-- card component -->
       <Card :card="card" :vendors="vendors" />
@@ -11,10 +14,11 @@
         <input
           type="number"
           name="card-number"
-          placeholder="xxxx"
           class="card-number"
           v-model="card.cardNumber"
+          maxlength="16"
         />
+
         <label for="cardholder-name">CARDHOLDER NAME</label>
         <input
           type="text"
@@ -23,6 +27,7 @@
           class="cardholder-name"
           v-model="card.name"
         />
+
         <div class="date">
           <div class="valid">
             <label for="month">MONTH</label>
@@ -64,6 +69,7 @@
             {{ vendor.name }}
           </option>
         </select>
+        <br>
         <button class="add-card-button" @submit="submit">ADD CARD</button>
       </form>
     </div>
@@ -71,9 +77,11 @@
 </template>
 
 <script>
-import Card from '../components/Card.vue';
+import Card from "../components/Card.vue";
+
 export default {
   components: { Card },
+
   data() {
     return {
       savedCardsArray: [],
@@ -114,6 +122,7 @@ export default {
       ],
     };
   },
+
   methods: {
     submit() {
       console.log(this.card);
@@ -124,7 +133,11 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+header {
+  text-align: center;
+}
+
 .add-cards {
   display: flex;
   flex-direction: column;
@@ -174,6 +187,11 @@ label {
 .add-new-card-button {
   border: none;
   background-color: black;
+  color: white;
+}
+
+.add-card-button:hover {
+  background-color: rgb(20, 20, 20);
   color: white;
 }
 </style>

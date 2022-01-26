@@ -1,6 +1,11 @@
 <template>
   <div id="app">
-    <Home v-if="currentView == 'home'" @clickToChangeView="changeView" :cards="cards"/>
+    <Home
+      v-if="currentView == 'home'"
+      @clickToChangeView="changeView"
+      :cards="cards"
+    />
+
     <AddCards
       v-else
       @clickToChangeView="changeView"
@@ -13,24 +18,39 @@
 import Home from "./views/Home.vue";
 import AddCards from "./views/AddCards.vue";
 
+
 export default {
   name: "App",
   components: { Home, AddCards },
   data() {
     return {
       currentView: "home",
+
       cards: [
         {
           id: 0,
-          cardNumber: "1234 5678 9012 3456",
-          name: "Lars Filipsson",
-          year: "2022",
+          cardNumber: "1337420069696666",
+          name: "Lennart Bladh",
+          year: "2024",
           month: "12",
           vendor: {
             name: "Bitcoin Inc",
             backgroundColor: "#FFAE34",
             fontColor: "black",
             logo: require("./assets/bitcoin.svg"),
+          },
+        },
+        {
+          id: 1,
+          cardNumber: "1234567890123456",
+          name: "Lars Filipsson",
+          year: "2022",
+          month: "12",
+          vendor: {
+            name: "Ninja Bank",
+            backgroundColor: "#222222",
+            fontColor: "black",
+            logo: require("./assets/ninja.svg"),
           },
         },
       ],
@@ -45,6 +65,7 @@ export default {
         this.currentView = "home";
       }
     },
+
     registerCard(value) {
       this.cards.push({
         id: this.cards.length,
@@ -63,7 +84,9 @@ export default {
 <style>
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=PT+Mono&display=swap");
-
+html {
+  background: grey;
+}
 #app {
   display: flex;
   justify-content: center;
@@ -72,8 +95,10 @@ export default {
   border-radius: 6px;
   width: 500px;
   height: 1000px;
-  border: 3px solid black;
   border-radius: 3rem;
+  /*  border: 3px solid black; */
+
+  /* background: white; */
 }
 
 h1 {

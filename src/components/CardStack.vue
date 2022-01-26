@@ -1,7 +1,8 @@
 <template>
   <div class="card-list">
-    <Card :card="card" v-for="card in cards" :key="card.id" />
+    <Card @sendData="$emit('sendData')" :card="card" v-for="card in cards" :key="card.id"  />
   </div>
+  
 </template>
 
 <script>
@@ -21,7 +22,7 @@ export default {
   },
   
   methods: {
-
+  
   },
 
 };
@@ -31,5 +32,8 @@ export default {
 .card-list {
   display: flex;
   flex-direction: column;
+ 
 }
+
+
 </style>

@@ -1,6 +1,7 @@
 <template>
   <div>
-    <div class="card" v-bind:style="cardTemplate">
+    <div @click="$emit('sendData')" class="card" v-bind:style="cardTemplate" >
+      
       <span class="logo-style">
         <div class="logos">
           <img :src="wifi" alt="wifi" id="wifiImg" />
@@ -9,8 +10,10 @@
         <img :src="logo" alt="vendor-logo" />
       </span>
 
-      <span class="card-text">
-        <p id="cardnum">{{ cardNumber }}</p></span>
+      <span class="card-text"> 
+        <p id="cardnum">{{ cardNumber }}</p>
+        </span>
+
       <span class="bot">
         <div class="name">
           <p class="cardText">CARDHOLDER NAME</p>
@@ -29,8 +32,8 @@
 
 <script>
 export default {
-  name: 'Card',
   props: ['card',],
+
   data() {
     return {
       wifiImg: require('../assets/wifi.svg'),
@@ -40,6 +43,12 @@ export default {
     };
   },
 
+
+  methods: {
+  
+  },
+
+
   computed: {
     cardTemplate() {
       return {
@@ -47,6 +56,7 @@ export default {
         color: this.card.vendor.fontColor,
       };
     },
+
     wifi() {
       let inputData = "";
       if (this.card.vendor.name == 'Ninja Bank') {
@@ -56,6 +66,7 @@ export default {
       }
       return inputData;
     },
+
     logo() {
       let inputData = "";
       if (this.card.vendor.logo) {
@@ -65,6 +76,7 @@ export default {
       }
       return inputData;
     },
+
     cardNumber() {
       let inputData = "";
       if (this.card.cardNumber) {
@@ -78,6 +90,7 @@ export default {
       }
       return inputData;
     },
+
     userName() {
       let inputData = "";
       if (this.card.name) {
@@ -87,6 +100,7 @@ export default {
       }
       return inputData;
     },
+
     validMonth() {
       let inputData = "";
       if (this.card.month) {
@@ -96,6 +110,7 @@ export default {
       }
       return inputData;
     },
+    
     validYear() {
       let inputData = "";
       if (this.card.year) {
@@ -111,13 +126,13 @@ export default {
 
 <style scoped>
 .name {
-  margin-left: 6px;
+  margin-left: 10px;
 }
 .valid-thru {
-  margin-right: 6px;
+  margin-right: 10px;
 }
 .card-text {
-  font-size: 10px;
+  font-size: 5px;
   font-family: 'PT Mono', monospace;
   text-align: left;
 }
@@ -128,11 +143,12 @@ export default {
   letter-spacing: 0.1rem;
 }
 #cardnum {
-  text-align: center;
+  text-align: left;
   font-size: 23px;
   letter-spacing: 6px;
   margin-top: 10px;
   font-family: 'PT Mono', monospace;
+  
 }
 
 .logos {
@@ -151,7 +167,13 @@ export default {
   justify-content: space-between;
 }
 .card {
-  background-color: #c2bbbb;
+  background-color: #b8b3b3;
   box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.32);
 }
+
+/* div.card{
+  transform: translateY(10%);
+}
+ */
+
 </style>
