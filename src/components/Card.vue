@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div @click="$emit('sendData', card)" class="card" v-bind:style="cardStyle"> 
+    <div @click="$emit('sendData', card)" class="card" :style="cardStyle">
       <span class="logo-style">
         <div class="logos">
           <img :src="wifi" alt="wifi" id="wifiImg" />
@@ -10,19 +10,21 @@
       </span>
 
       <span class="card-text">
-        <p id="cardnum">{{ cardNumber }}</p>  <!-- card.cardNumber -->
+        <p id="cardnum">{{ cardNumber }}</p>
+        <!-- card.cardNumber -->
       </span>
 
       <span class="bot">
         <div class="name">
           <p class="cardText">CARDHOLDER NAME</p>
-          <p class="cardinfo">{{ userName }}</p>  <!-- card.userName -->
+          <p class="cardinfo">{{ userName }}</p>
+          <!-- card.userName -->
         </div>
 
         <div class="valid-thru">
           <p class="cardText">VALID THRU</p>
-          <p class="cardinfo">{{ `${validMonth}/${validYear}` }}</p>
-          <!-- <p class="cardinfo">{{card.validMonth}} / {{card.validYear}}</p>  -->
+         <!--  <p class="cardinfo"> {{   `${validMonth}/${validYear}` }}  </p> -->
+          <p class="cardinfo">{{validMonth}} / {{validYear}}</p> 
         </div>
       </span>
     </div>
@@ -31,7 +33,7 @@
 
 <script>
 export default {
-  props: ["card","cardinfo"],
+  props: ["card"],
 
   data() {
     return {
@@ -42,14 +44,14 @@ export default {
     };
   },
 
-  methods: {
-    
+  mounted() {
+    console.log(this.card.vendor.backgroundColor)
   },
 
   computed: {
-
     cardStyle() {
       return {
+        // gets card color when selecting vendor
         backgroundColor: this.card.vendor.backgroundColor,
         color: this.card.vendor.fontColor,
       };

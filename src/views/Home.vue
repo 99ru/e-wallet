@@ -4,13 +4,8 @@
       <h1>E-WALLET</h1>
       <p>ACTIVE CARD</p>
     </header>
-
     <Card :card="modelCard" />
-
-    <div class="card-list">
-      <CardStack :cards="cards" @sendData="myMethod" />
-    </div>
-
+    <CardStack :cards="cards" @sendData="myMethod" />
     <button @click="$emit('toggleView')" class="add-button">
       ADD A NEW CARD
     </button>
@@ -28,9 +23,7 @@ export default {
 
   data() {
     return {
-      modelCard: {
-
-      },
+      modelCard: {},
     };
   },
 

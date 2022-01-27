@@ -5,8 +5,7 @@
       @toggleView="changeView"
       :cards="cards"
     />
-
-    <AddCards v-else @toggleView="changeView" @emit-card="registerCard" />
+    <AddCards v-else @toggleView="changeView" @emit-card="registerCard"  />
   </div>
 </template>
 
@@ -35,7 +34,33 @@ export default {
             logo: require("./assets/bitcoin.svg"),
           },
         },
-      ],
+        {
+          id: 1,
+          cardNumber: "1337420069696666",
+          name: "Lennart Bladh",
+          year: "2024",
+          month: "12",
+          vendor: {
+            name: "Ninja Bank",
+            backgroundColor: "#222222",
+            fontColor: "white",
+            logo: require("./assets/ninja.svg"),
+          },
+        },
+        {
+          id: 2,
+          cardNumber: "1337420069696666",
+          name: "Lennart Bladh",
+          year: "2024",
+          month: "12",
+          vendor: {
+            name: "Block Chain Inc",
+            backgroundColor: "#8B58F9",
+            fontColor: "white",
+            logo: require("./assets/blockchain.svg"),
+          },
+       
+        },],
     };
   },
 
@@ -62,6 +87,7 @@ export default {
   },
 };
 </script>
+
 
 <style>
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;600&display=swap");
