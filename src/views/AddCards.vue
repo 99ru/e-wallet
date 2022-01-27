@@ -7,8 +7,9 @@
 
     <div id="form">
       <Card :card="card" :vendors="vendors" />
-
       <form class="form" @submit.prevent="submit">
+
+        <!-- card number input -->
         <label for="card-number">CARD NUMBER</label>
         <input
           type="text"
@@ -18,6 +19,8 @@
           maxlength="16"
         />
 
+
+        <!-- name input -->
         <label for="cardholder-name">CARDHOLDER NAME</label>
         <input
           type="text"
@@ -28,6 +31,7 @@
           maxlength="26"
         />
 
+       <!--  select month -->
         <div class="date">
           <div class="valid">
             <label for="month">MONTH</label>
@@ -43,6 +47,7 @@
             </select>
           </div>
 
+         <!--  select year -->
           <div class="valid">
             <label for="year">YEAR</label>
             <select name="year" v-model="card.year">
@@ -58,6 +63,7 @@
           </div>
         </div>
 
+        <!-- select vendor -->
         <label for="vendor">VENDOR</label>
         <select class="vendor" name="vendor" v-model="card.vendor">
           <option

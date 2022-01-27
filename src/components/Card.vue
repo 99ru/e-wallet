@@ -10,18 +10,19 @@
       </span>
 
       <span class="card-text">
-        <p id="cardnum">{{ card.cardNumber }}</p>
+        <p id="cardnum">{{ cardNumber }}</p>  <!-- card.cardNumber -->
       </span>
 
       <span class="bot">
         <div class="name">
           <p class="cardText">CARDHOLDER NAME</p>
-          <p class="cardinfo">{{ card.userName }}</p>
+          <p class="cardinfo">{{ userName }}</p>  <!-- card.userName -->
         </div>
 
         <div class="valid-thru">
           <p class="cardText">VALID THRU</p>
-          <p class="cardinfo">{{card.validMonth}}/{{card.validYear}}</p>
+          <p class="cardinfo">{{ `${validMonth}/${validYear}` }}</p>
+          <!-- <p class="cardinfo">{{card.validMonth}} / {{card.validYear}}</p>  -->
         </div>
       </span>
     </div>

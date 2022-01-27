@@ -3,13 +3,11 @@
     <header>
       <h1>E-WALLET</h1>
       <p>ACTIVE CARD</p>
-      <div class="active-card"></div>
     </header>
 
     <Card :card="modelCard" />
 
     <div class="card-list">
-      <!--  <Card /> -->
       <CardStack :cards="cards" @sendData="myMethod" />
     </div>
 
