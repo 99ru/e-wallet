@@ -6,18 +6,13 @@
       :cards="cards"
     />
 
-    <AddCards
-      v-else
-      @toggleView="changeView"
-      @emit-card="registerCard"
-    />
+    <AddCards v-else @toggleView="changeView" @emit-card="registerCard" />
   </div>
 </template>
 
 <script>
 import Home from "./views/Home.vue";
 import AddCards from "./views/AddCards.vue";
-
 
 export default {
   name: "App",
@@ -77,13 +72,11 @@ html {
 #app {
   display: flex;
   justify-content: center;
- 
+
   text-transform: uppercase;
   border-radius: 6px;
 
   border-radius: 3rem;
-  
-
 }
 
 h1 {

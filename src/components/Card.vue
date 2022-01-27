@@ -1,7 +1,6 @@
 <template>
   <div>
-    <div @click="$emit('sendData', card)" class="card" v-bind:style="cardStyle" >
-      
+    <div @click="$emit('sendData', card)" class="card" v-bind:style="cardStyle"> 
       <span class="logo-style">
         <div class="logos">
           <img :src="wifi" alt="wifi" id="wifiImg" />
@@ -10,21 +9,20 @@
         <img :src="logo" alt="vendor-logo" />
       </span>
 
-      <span class="card-text"> 
-        <p id="cardnum">{{ cardNumber }}</p>
-        </span>
+      <span class="card-text">
+        <p id="cardnum">{{ card.cardNumber }}</p>
+      </span>
 
       <span class="bot">
         <div class="name">
           <p class="cardText">CARDHOLDER NAME</p>
-          <p class="cardinfo">{{ userName }}</p>
-        </div>
-        
-        <div class="valid-thru">
-          <p class="cardText">VALID THRU</p>
-          <p class="cardinfo">{{ `${validMonth}/${validYear}` }}</p>
+          <p class="cardinfo">{{ card.userName }}</p>
         </div>
 
+        <div class="valid-thru">
+          <p class="cardText">VALID THRU</p>
+          <p class="cardinfo">{{card.validMonth}}/{{card.validYear}}</p>
+        </div>
       </span>
     </div>
   </div>
@@ -32,26 +30,23 @@
 
 <script>
 export default {
-  props: ['card',],
+  props: ["card","cardinfo"],
 
   data() {
     return {
-      wifiImg: require('../assets/wifi.svg'),
-      chipImg: require('../assets/chip.svg'),
-      whiteWifiImg: require('../assets/wifi_white.svg'),
-      vendorLogo: require('../assets/bitcoin.svg'),
+      wifiImg: require("../assets/wifi.svg"),
+      chipImg: require("../assets/chip.svg"),
+      whiteWifiImg: require("../assets/wifi_white.svg"),
+      vendorLogo: require("../assets/bitcoin.svg"),
     };
   },
 
-
   methods: {
-   /* active(){
-     this.card
-   } */
+    
   },
 
-
   computed: {
+
     cardStyle() {
       return {
         backgroundColor: this.card.vendor.backgroundColor,
@@ -61,7 +56,7 @@ export default {
 
     wifi() {
       let inputData = "";
-      if (this.card.vendor.name == 'Ninja Bank') {
+      if (this.card.vendor.name == "Ninja Bank") {
         inputData = this.whiteWifiImg;
       } else {
         inputData = this.wifiImg;
@@ -112,7 +107,7 @@ export default {
       }
       return inputData;
     },
-    
+
     validYear() {
       let inputData = "";
       if (this.card.year) {
@@ -135,12 +130,12 @@ export default {
 }
 .card-text {
   font-size: 5px;
-  font-family: 'PT Mono', monospace;
+  font-family: "PT Mono", monospace;
   text-align: left;
 }
 .cardinfo {
   font-size: 15px;
-  font-family: 'PT Mono', monospace;
+  font-family: "PT Mono", monospace;
   margin-top: 5px;
   letter-spacing: 0.1rem;
 }
@@ -149,7 +144,7 @@ export default {
   font-size: 23px;
   letter-spacing: 6px;
   margin-top: 10px;
-  font-family: 'PT Mono', monospace;
+  font-family: "PT Mono", monospace;
 }
 .logos {
   display: flex;
@@ -167,7 +162,7 @@ export default {
   justify-content: space-between;
 }
 .card {
-  background-color: #D0D0D0;
+  background-color: #d0d0d0;
   box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.32);
 }
 
@@ -175,5 +170,4 @@ export default {
   transform: translateY(10%);
 }
  */
-
 </style>

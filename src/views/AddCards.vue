@@ -1,7 +1,6 @@
 <template>
   <div class="add-cards">
-
-    <header >
+    <header>
       <h1>ADD A NEW BANK CARD</h1>
       <p>NEW CARD</p>
     </header>
@@ -70,7 +69,7 @@
             {{ vendor.name }}
           </option>
         </select>
-        <br>
+        <br />
         <button class="add-card-button" @submit="submit">ADD CARD</button>
       </form>
     </div>
@@ -134,14 +133,12 @@ export default {
 };
 </script>
 
-
-
 <style scoped>
 header {
   text-align: center;
 }
 
-form{
+form {
   margin-top: 40px;
 }
 

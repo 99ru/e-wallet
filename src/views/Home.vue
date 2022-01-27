@@ -5,43 +5,44 @@
       <p>ACTIVE CARD</p>
       <div class="active-card"></div>
     </header>
-   
-    
+
+    <Card :card="modelCard" />
+
     <div class="card-list">
-     <!--  <Card /> -->
-      <CardStack :cards="cards"/>
+      <!--  <Card /> -->
+      <CardStack :cards="cards" @sendData="myMethod" />
     </div>
 
     <button @click="$emit('toggleView')" class="add-button">
       ADD A NEW CARD
     </button>
-    
   </div>
 </template>
 
 <script>
 import CardStack from "../components/CardStack.vue";
-/* import Card from "../components/Card.vue"; */ 
+import Card from "../components/Card.vue";
 export default {
-
-  components: { CardStack,  },
+  components: { CardStack, Card },
   props: {
-    cards: {type: Array,Object},
+    cards: { type: Array, Object },
   },
 
   data() {
     return {
+      modelCard: {
+
+      },
     };
   },
 
   methods: {
     myMethod(info) {
+      this.modelCard = info;
       console.log(info);
     },
   },
 };
-
-
 </script>
 <style>
 header {
@@ -57,22 +58,21 @@ header {
   /* nu hamnar knappen alltid under korten
   height: 660px;
   width: 386px; */
-  margin-top: 40px
+  margin-top: 40px;
 }
 
 .add-button {
   background-color: white;
   color: black;
   margin-top: 50px;
-
 }
 
 .active-card {
   height: 200px;
   width: 386px;
-  background-color: #D0D0D0;
+  background-color: #d0d0d0;
   box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.32);
-  
+
   display: flex;
   flex-direction: column;
   justify-content: center;
