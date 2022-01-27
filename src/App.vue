@@ -95,7 +95,7 @@ export default {
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=PT+Mono&display=swap");
 html {
-  background: rgba(226, 222, 222, 0.877);
+  background: rgba(255, 251, 251, 0.877);
 }
 #app {
   display: flex;

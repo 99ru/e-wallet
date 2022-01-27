@@ -5,12 +5,19 @@
       <p>ACTIVE CARD</p>
     </header>
 
-    <Card :card="modelCard" v-if="modelCard" />
-    <CardStack :cards="cards" @sendData="myMethod" />
+    <div class="active-card">
+      <Card :card="modelCard" v-if="modelCard" />
+    </div>
+    <br /><br />
+
+    <div class="list">
+      <CardStack :cards="cards" @sendData="activeClick" />
+    </div>
 
     <button @click="$emit('toggleView')" class="add-button">
-      ADD A NEW CARD</button>
-    </div>
+      ADD A NEW CARD
+    </button>
+  </div>
 </template>
 
 <script>
@@ -24,12 +31,12 @@ export default {
 
   data() {
     return {
-      modelCard: this.cards[0], 
+      modelCard: this.cards[0],
     };
   },
 
   methods: {
-    myMethod(info) {
+    activeClick(info) {
       this.modelCard = info;
       console.log(info);
     },
@@ -57,17 +64,5 @@ header {
   background-color: white;
   color: black;
   margin-top: 50px;
-}
-
-.active-card {
-  height: 200px;
-  width: 386px;
-  background-color: #d0d0d0;
-  box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.32);
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 </style>

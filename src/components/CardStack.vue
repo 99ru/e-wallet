@@ -1,12 +1,15 @@
 
 <template>
   <div>
-    <Card
+    <div class="grid-container">
+      <Card
       @sendData="$emit('sendData' , card)"
       :card="card"
       v-for="card in cards"
       :key="card.id"
     />
+    </div>
+    
   </div>
 </template>
 
@@ -28,8 +31,15 @@ export default {
 </script>
 
 <style scoped>
-.card-list {
+/* .card-list {
   display: flex;
   flex-direction: column;
+} */
+
+.grid-container{
+  display:grid;
+  grid-auto-rows: 2rem;
+  height: 400px;
+  
 }
 </style>
