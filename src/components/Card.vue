@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div @click="$emit('sendData')" class="card" v-bind:style="cardTemplate" >
+    <div @click="$emit('sendData', card)" class="card" v-bind:style="cardStyle" >
       
       <span class="logo-style">
         <div class="logos">
@@ -45,12 +45,14 @@ export default {
 
 
   methods: {
-  
+   /* active(){
+     this.card
+   } */
   },
 
 
   computed: {
-    cardTemplate() {
+    cardStyle() {
       return {
         backgroundColor: this.card.vendor.backgroundColor,
         color: this.card.vendor.fontColor,
@@ -106,7 +108,7 @@ export default {
       if (this.card.month) {
         inputData = this.card.month;
       } else {
-        inputData = "";
+        inputData = "MM";
       }
       return inputData;
     },
@@ -116,7 +118,7 @@ export default {
       if (this.card.year) {
         inputData = this.card.year.substring(2, 4);
       } else {
-        inputData = "";
+        inputData = "YY";
       }
       return inputData;
     },
@@ -129,7 +131,7 @@ export default {
   margin-left: 10px;
 }
 .valid-thru {
-  margin-right: 10px;
+  margin-right: 5px;
 }
 .card-text {
   font-size: 5px;
@@ -148,9 +150,7 @@ export default {
   letter-spacing: 6px;
   margin-top: 10px;
   font-family: 'PT Mono', monospace;
-  
 }
-
 .logos {
   display: flex;
   flex-direction: column;
@@ -167,7 +167,7 @@ export default {
   justify-content: space-between;
 }
 .card {
-  background-color: #b8b3b3;
+  background-color: #D0D0D0;
   box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.32);
 }
 

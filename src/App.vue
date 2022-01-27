@@ -2,13 +2,13 @@
   <div id="app">
     <Home
       v-if="currentView == 'home'"
-      @clickToChangeView="changeView"
+      @toggleView="changeView"
       :cards="cards"
     />
 
     <AddCards
       v-else
-      @clickToChangeView="changeView"
+      @toggleView="changeView"
       @emit-card="registerCard"
     />
   </div>
@@ -38,19 +38,6 @@ export default {
             backgroundColor: "#FFAE34",
             fontColor: "black",
             logo: require("./assets/bitcoin.svg"),
-          },
-        },
-        {
-          id: 1,
-          cardNumber: "1234567890123456",
-          name: "Lars Filipsson",
-          year: "2022",
-          month: "12",
-          vendor: {
-            name: "Ninja Bank",
-            backgroundColor: "#222222",
-            fontColor: "black",
-            logo: require("./assets/ninja.svg"),
           },
         },
       ],
@@ -85,20 +72,18 @@ export default {
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=PT+Mono&display=swap");
 html {
-  background: grey;
+  background: rgba(226, 222, 222, 0.877);
 }
 #app {
   display: flex;
   justify-content: center;
-  margin: auto;
+ 
   text-transform: uppercase;
   border-radius: 6px;
-  width: 500px;
-  height: 1000px;
-  border-radius: 3rem;
-  /*  border: 3px solid black; */
 
-  /* background: white; */
+  border-radius: 3rem;
+  
+
 }
 
 h1 {

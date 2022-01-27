@@ -3,18 +3,16 @@
     <header>
       <h1>E-WALLET</h1>
       <p>ACTIVE CARD</p>
-
-      <div class="active-card">
-        imposter syndrome
-      </div>
+      <div class="active-card"></div>
     </header>
+   
     
-
     <div class="card-list">
-      <CardStack :cards="cards" @sendData="myMethod()"/>
+     <!--  <Card /> -->
+      <CardStack :cards="cards"/>
     </div>
 
-    <button @click="$emit('clickToChangeView')" class="add-button">
+    <button @click="$emit('toggleView')" class="add-button">
       ADD A NEW CARD
     </button>
     
@@ -23,34 +21,22 @@
 
 <script>
 import CardStack from "../components/CardStack.vue";
+/* import Card from "../components/Card.vue"; */ 
 export default {
 
   components: { CardStack,  },
   props: {
-    cards: {type: Array,},
+    cards: {type: Array,Object},
   },
-
 
   data() {
     return {
-      activeCardData: {
-        cardNumber: "",
-        name: "",
-        year: "",
-        month: "",
-        vendor: {},
-      },
     };
   },
-
 
   methods: {
     myMethod(info) {
       console.log(info);
-    },
-    activeCard(card){
-      this.activeCardData = card;
-      this.$emit('click', this.activeCardData);
     },
   },
 };
@@ -67,23 +53,26 @@ header {
   align-items: center;
 }
 
-/* .card-list {
-  nu hamnar knappen alltid under korten
+.card-list {
+  /* nu hamnar knappen alltid under korten
   height: 660px;
-  width: 386px;
-} */
+  width: 386px; */
+  margin-top: 40px
+}
 
 .add-button {
   background-color: white;
   color: black;
+  margin-top: 50px;
 
 }
 
 .active-card {
   height: 200px;
   width: 386px;
-  background-color: #e2dbdb;
-  border-radius: 8px;
+  background-color: #D0D0D0;
+  box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.32);
+  
   display: flex;
   flex-direction: column;
   justify-content: center;

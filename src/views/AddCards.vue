@@ -1,18 +1,18 @@
 <template>
   <div class="add-cards">
+
     <header >
       <h1>ADD A NEW BANK CARD</h1>
       <p>NEW CARD</p>
     </header>
 
     <div id="form">
-      <!-- card component -->
       <Card :card="card" :vendors="vendors" />
 
       <form class="form" @submit.prevent="submit">
         <label for="card-number">CARD NUMBER</label>
         <input
-          type="number"
+          type="text"
           name="card-number"
           class="card-number"
           v-model="card.cardNumber"
@@ -26,6 +26,7 @@
           placeholder="FIRSTNAME LASTNAME"
           class="cardholder-name"
           v-model="card.name"
+          maxlength="26"
         />
 
         <div class="date">
@@ -84,7 +85,6 @@ export default {
 
   data() {
     return {
-      savedCardsArray: [],
       card: {
         cardNumber: "",
         name: "",
@@ -94,6 +94,7 @@ export default {
       },
       months: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"],
       years: ["2022", "2023", "2024", "2025", "2026"],
+
       vendors: [
         {
           name: "Bitcoin Inc",
@@ -126,16 +127,22 @@ export default {
   methods: {
     submit() {
       console.log(this.card);
-      this.$emit("clickToChangeView");
+      this.$emit("toggleView");
       this.$emit("emit-card", this.card);
     },
   },
 };
 </script>
 
+
+
 <style scoped>
 header {
   text-align: center;
+}
+
+form{
+  margin-top: 40px;
 }
 
 .add-cards {
@@ -151,7 +158,7 @@ header {
 
 input,
 select {
-  font-size: 18px;
+  font-size: 14px;
   border-radius: 8px;
   min-height: 56px;
 }
@@ -174,7 +181,7 @@ label {
 
 .valid {
   height: 56px;
-  width: 175px;
+  width: 170px;
   display: flex;
   flex-direction: column;
 }

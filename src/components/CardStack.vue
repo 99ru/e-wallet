@@ -1,30 +1,31 @@
 <template>
-  <div class="card-list">
-    <Card @sendData="$emit('sendData')" :card="card" v-for="card in cards" :key="card.id"  />
+  <div>
+    <Card
+      @sendData="$emit('sendData')"
+      :card="card"
+      v-for="card in cards"
+      :key="card.id"
+    />
   </div>
-  
 </template>
 
 <script>
-import Card from './Card.vue';
+import Card from "./Card.vue";
 
 export default {
   components: { Card },
-  props: {
-    cards: {
-      type: Array,
-    },
-  },
-  
+  props: {cards: Array, active: Array},
+
+
   data() {
     return {
+  
     };
   },
-  
-  methods: {
-  
-  },
 
+  methods: {
+
+  },
 };
 </script>
 
@@ -32,8 +33,5 @@ export default {
 .card-list {
   display: flex;
   flex-direction: column;
- 
 }
-
-
 </style>
