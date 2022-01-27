@@ -21,7 +21,7 @@ export default {
       currentView: "home",
 
       cards: [
-        {
+       /*  {
           id: 0,
           cardNumber: "1337420069696666",
           name: "Lennart Bladh",
@@ -36,7 +36,7 @@ export default {
         },
         {
           id: 1,
-          cardNumber: "1337420069696666",
+          cardNumber: "1337420069694444",
           name: "Lennart Bladh",
           year: "2024",
           month: "12",
@@ -49,7 +49,7 @@ export default {
         },
         {
           id: 2,
-          cardNumber: "1337420069696666",
+          cardNumber: "1337420069693333",
           name: "Lennart Bladh",
           year: "2024",
           month: "12",
@@ -60,7 +60,9 @@ export default {
             logo: require("./assets/blockchain.svg"),
           },
        
-        },],
+        }, */
+        
+        ],
     };
   },
 

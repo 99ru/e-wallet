@@ -1,6 +1,7 @@
 <template>
   <div>
     <div @click="$emit('sendData', card)" class="card" :style="cardStyle">
+
       <span class="logo-style">
         <div class="logos">
           <img :src="wifi" alt="wifi" id="wifiImg" />
@@ -52,8 +53,9 @@ export default {
     cardStyle() {
       return {
         // gets card color when selecting vendor
-        backgroundColor: this.card.vendor.backgroundColor,
-        color: this.card.vendor.fontColor,
+        backgroundColor: `${this.card.vendor.backgroundColor}`,
+        color: `${this.card.vendor.fontColor}`,
+        
       };
     },
 

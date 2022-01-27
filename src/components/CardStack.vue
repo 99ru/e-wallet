@@ -18,7 +18,9 @@ export default {
   props: { cards: Array, active: Array },
 
   data() {
-    return {};
+    return {
+      
+    };
   },
 
   methods: {},

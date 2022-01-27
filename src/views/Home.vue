@@ -4,12 +4,13 @@
       <h1>E-WALLET</h1>
       <p>ACTIVE CARD</p>
     </header>
-    <Card :card="modelCard" />
+
+    <Card :card="modelCard" v-if="modelCard" />
     <CardStack :cards="cards" @sendData="myMethod" />
+
     <button @click="$emit('toggleView')" class="add-button">
-      ADD A NEW CARD
-    </button>
-  </div>
+      ADD A NEW CARD</button>
+    </div>
 </template>
 
 <script>
@@ -23,7 +24,7 @@ export default {
 
   data() {
     return {
-      modelCard: {},
+      modelCard: this.cards[0], 
     };
   },
 
