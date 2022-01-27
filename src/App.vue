@@ -21,7 +21,8 @@ export default {
       currentView: "home",
 
       cards: [
-       /*  {
+       /* test data
+        {
           id: 0,
           cardNumber: "1337420069696666",
           name: "Lennart Bladh",
@@ -33,35 +34,7 @@ export default {
             fontColor: "black",
             logo: require("./assets/bitcoin.svg"),
           },
-        },
-        {
-          id: 1,
-          cardNumber: "1337420069694444",
-          name: "Lennart Bladh",
-          year: "2024",
-          month: "12",
-          vendor: {
-            name: "Ninja Bank",
-            backgroundColor: "#222222",
-            fontColor: "white",
-            logo: require("./assets/ninja.svg"),
-          },
-        },
-        {
-          id: 2,
-          cardNumber: "1337420069693333",
-          name: "Lennart Bladh",
-          year: "2024",
-          month: "12",
-          vendor: {
-            name: "Block Chain Inc",
-            backgroundColor: "#8B58F9",
-            fontColor: "white",
-            logo: require("./assets/blockchain.svg"),
-          },
-       
-        }, */
-        
+        },*/
         ],
     };
   },
@@ -100,23 +73,28 @@ html {
 #app {
   display: flex;
   justify-content: center;
-
   text-transform: uppercase;
   border-radius: 6px;
-
   border-radius: 3rem;
 }
 
 h1 {
   font-family: "Source Sans Pro", sans-serif;
 }
+p {
+  font-family: "PT Mono",
+}
+h4 {
+  font-family: "PT Mono";
+  color: rgb(102, 96, 96);
+}
 
 input {
-  font-family: "PT Mono", monospace;
+  font-family: "PT Mono",
 }
 
 button {
-  font-family: "PT Mono", monospace;
+  font-family: "PT Mono";
   font-size: 22px;
   width: 382px;
   height: 72px;

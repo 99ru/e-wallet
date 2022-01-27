@@ -40,6 +40,6 @@ export default {
   display:grid;
   grid-auto-rows: 2rem;
   height: 400px;
-  
 }
+
 </style>

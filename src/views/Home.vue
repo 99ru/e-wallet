@@ -2,18 +2,20 @@
   <div id="home-view">
     <header>
       <h1>E-WALLET</h1>
-      <p>ACTIVE CARD</p>
+      <h4>ACTIVE CARD</h4>
     </header>
 
     <div class="active-card">
       <Card :card="modelCard" v-if="modelCard" />
+      <p v-if="!cards.length">You have no cards in your wallet yet.</p>
     </div>
-    <br /><br />
+    <br><br><br>
+   
 
     <div class="list">
       <CardStack :cards="cards" @sendData="activeClick" />
     </div>
-
+    
     <button @click="$emit('toggleView')" class="add-button">
       ADD A NEW CARD
     </button>
@@ -23,12 +25,12 @@
 <script>
 import CardStack from "../components/CardStack.vue";
 import Card from "../components/Card.vue";
+
 export default {
   components: { CardStack, Card },
   props: {
     cards: { type: Array, Object },
   },
-
   data() {
     return {
       modelCard: this.cards[0],
@@ -41,6 +43,7 @@ export default {
       console.log(info);
     },
   },
+  
 };
 </script>
 <style>
@@ -53,16 +56,4 @@ header {
   align-items: center;
 }
 
-.card-list {
-  /* nu hamnar knappen alltid under korten
-  height: 660px;
-  width: 386px; */
-  margin-top: 40px;
-}
-
-.add-button {
-  background-color: white;
-  color: black;
-  margin-top: 50px;
-}
 </style>
