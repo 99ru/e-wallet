@@ -1,6 +1,6 @@
 # E-Wallet with Vue2 IT-högskolan
 
-https://github.com/99ru/vue-wallet/blob/master/wallet4.png
+![image](https://user-images.githubusercontent.com/89448433/157432515-59569980-7fa8-40ea-bc01-57f0d1944b6a.png)
 
 ## Project setup
 ```
