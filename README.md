@@ -2,6 +2,7 @@
 
 ![image](https://github.com/99ru/vue-wallet/blob/master/wallet4.png)
 
-## Project setup
-```
+# Mock
 ![demo.gif](demo.gif)
+
+
