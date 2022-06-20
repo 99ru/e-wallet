@@ -11,11 +11,13 @@
         <!-- card number input -->
         <label for="card-number">CARD NUMBER</label>
         <input
-          type="text"
+          type="number"
           name="card-number"
           class="card-number"
           v-model="card.cardNumber"
           maxlength="16"
+          placeholder="0000 0000 0000 0000"
+          required
         />
 
         <!-- name input -->
@@ -27,6 +29,7 @@
           class="cardholder-name"
           v-model="card.name"
           maxlength="26"
+          required
         />
 
         <!--  select month -->
