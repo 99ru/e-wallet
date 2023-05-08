@@ -5,7 +5,7 @@
       @toggleView="changeView"
       :cards="cards"
     />
-    <AddCards v-else @toggleView="changeView" @emit-card="registerCard"  />
+    <AddCards v-else @toggleView="changeView" @emit-card="registerCard" />
   </div>
 </template>
 
@@ -21,7 +21,6 @@ export default {
       currentView: "home",
 
       cards: [
-       /* test data
         {
           id: 0,
           cardNumber: "1337420069696666",
@@ -29,13 +28,26 @@ export default {
           year: "2024",
           month: "12",
           vendor: {
-            name: "Bitcoin Inc",
-            backgroundColor: "#FFAE34",
-            fontColor: "black",
-            logo: require("./assets/bitcoin.svg"),
+            name: "Evil Corp",
+          backgroundColor: "#F33355",
+          fontColor: "white",
+          logo: require("./assets/evil.svg"),
           },
-        },*/
-        ],
+        },
+        {
+          id: 1,
+          cardNumber: "1337420069696666",
+          name: "Lennart Bladh",
+          year: "2024",
+          month: "12",
+          vendor: {
+           name: "Ninja Bank",
+          backgroundColor: "#222222",
+          fontColor: "white",
+          logo: require("./assets/ninja.svg"),
+          },
+        },
+      ],
     };
   },
 
@@ -63,7 +75,6 @@ export default {
 };
 </script>
 
-
 <style>
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=PT+Mono&display=swap");
@@ -82,7 +93,7 @@ h1 {
   font-family: "Source Sans Pro", sans-serif;
 }
 p {
-  font-family: "PT Mono",
+  font-family: "PT Mono";
 }
 h4 {
   font-family: "PT Mono";
@@ -90,7 +101,7 @@ h4 {
 }
 
 input {
-  font-family: "PT Mono",
+  font-family: "PT Mono";
 }
 
 button {

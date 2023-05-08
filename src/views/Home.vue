@@ -9,12 +9,14 @@
       <Card :card="modelCard" v-if="modelCard" />
       <p v-if="!cards.length">You have no cards in your wallet yet.</p>
     </div>
-    <br><br><br>
+   
    
 
     <div class="list">
       <CardStack :cards="cards" @sendData="activeClick" />
     </div>
+
+    
     
     <button @click="$emit('toggleView')" class="add-button">
       ADD A NEW CARD
@@ -55,5 +57,7 @@ header {
   flex-direction: column;
   align-items: center;
 }
-
+.active-card{
+  margin-bottom: 30px;
+}
 </style>

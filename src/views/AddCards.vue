@@ -18,6 +18,7 @@
           maxlength="16"
           placeholder="0000 0000 0000 0000"
           required
+           @input="checkCardNumberLength"
         />
 
         <!-- name input -->
@@ -137,6 +138,11 @@ export default {
       this.$emit("toggleView");
       this.$emit("emit-card", this.card);
     },
+    checkCardNumberLength() {
+    if (this.card.cardNumber.length > 16) {
+      this.card.cardNumber = this.card.cardNumber.substring(0, 16);
+    }
+  },
   },
 };
 </script>

@@ -145,11 +145,12 @@ export default {
   letter-spacing: 0.1rem;
 }
 #cardnum {
-  text-align: left;
-  font-size: 23px;
-  letter-spacing: 6px;
-  margin-top: 10px;
-  font-family: "PT Mono", monospace;
+     text-align: left;
+    font-size: 1.3rem;
+    letter-spacing: 6px;
+    margin-top: 12px;
+    font-family: "PT Mono", monospace;
+    margin: 12px 12px;
 }
 .logos {
   display: flex;
@@ -161,6 +162,7 @@ export default {
 .logo-style {
   display: flex;
   justify-content: space-between;
+  margin: 0px 12px 0px 12px
 }
 .bot {
   display: flex;
@@ -168,11 +170,12 @@ export default {
 }
 .card {
   background-color: #d0d0d0;
-  box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.32);
+  box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.32);;
+}
+.cardText{
+      margin-right: 4px;
 }
 
-/* div.card{
-  transform: translateY(10%);
-}
- */
+
+
 </style>
