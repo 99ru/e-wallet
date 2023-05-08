@@ -24,7 +24,7 @@ export default {
         {
           id: 0,
           cardNumber: "1337420069696666",
-          name: "Lennart Bladh",
+          name: "John Doe",
           year: "2024",
           month: "12",
           vendor: {
@@ -37,8 +37,8 @@ export default {
         {
           id: 1,
           cardNumber: "1337420069696666",
-          name: "Lennart Bladh",
-          year: "2024",
+          name: "Lars åke",
+          year: "2023",
           month: "12",
           vendor: {
            name: "Ninja Bank",
