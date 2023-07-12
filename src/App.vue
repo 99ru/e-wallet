@@ -47,19 +47,7 @@ export default {
           logo: require("./assets/ninja.svg"),
           },
         },
-        {
-          id: 2,
-          cardNumber: "1237420569699999",
-          name: "Mr Hanky",
-          year: "2023",
-          month: "06",
-          vendor: {
-           name: "Ninja Bank",
-          backgroundColor: "#FFAE34",
-          fontColor: "white",
-          logo: require("./assets/bitcoin.svg"),
-          },
-        },
+      
       ],
     };
   },
@@ -99,7 +87,14 @@ html {
   justify-content: center;
   text-transform: uppercase;
   border-radius: 6px;
-  border-radius: 3rem;
+  border-radius: 3rem;;
+}
+@media only screen and (max-width: 600px) {
+  #app {
+    transform: scale(0.7); 
+		margin-top: -6rem;
+  }
+
 }
 
 h1 {
